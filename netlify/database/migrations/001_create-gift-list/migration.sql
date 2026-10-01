@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS gift_reservations (
+  gift_id INTEGER PRIMARY KEY CHECK (gift_id BETWEEN 1 AND 40),
+  token TEXT NOT NULL UNIQUE,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS rsvps (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS rsvps_created_at_idx ON rsvps (created_at DESC);
