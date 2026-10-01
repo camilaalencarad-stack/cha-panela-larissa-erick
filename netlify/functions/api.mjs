@@ -3,7 +3,7 @@ import crypto from "node:crypto";
 
 const db = getDatabase();
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
-const TOTAL_GIFTS = 40;
+const TOTAL_GIFTS = 41;
 
 const json = (data, status = 200) => new Response(JSON.stringify(data), {
   status,
